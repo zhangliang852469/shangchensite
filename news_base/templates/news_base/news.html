@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}新闻动态{% endblock %}
+
+{% block content %}
+
+<!-- header -->
+	<div class="banner1">
+		<div class="container">
+	</div>
+	</div>
+<!-- header -->
+
+
+<!-- about -->
+	<div class="main">
+		<div class="container">
+		<!-- news -->
+		<div class="news">
+			<h3>近期新闻</h3>
+
+				<div class="news-grids">
+                    {% for new in  news_list %}
+					<div class="col-md-4 news-grid">
+						<div class="news-grid-text">
+							<h4>{{ new.title }}</h4>
+							<span>{{ new.date }}</span>
+						</div>
+						<img src="{{ MEDIA_URL }}{{ new.image }} " width="350" height="234" class="img-responsive" alt="" />
+						<p>{{ new.body }}</p>
+					</div>
+                        {% endfor %}
+			</div>
+		</div>
+		<!-- //news -->
+		</div>
+	</div>
+{% endblock %}

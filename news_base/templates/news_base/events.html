@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}交易记录{% endblock %}
+{% block content %}
+	<div class="banner1">
+		<div class="container">
+
+	</div>
+	</div>
+<!-- header -->
+
+
+<!-- about -->
+	<div class="main">
+		<div class="container">
+		<h2>交易记录</h2>
+		<!-- portfolio-section -->
+	 <div class="portfolio"  id="portfolio">
+	 <div class="welcome-top">
+				<div id="portfoliolist">
+                    {% for event in events_list %}
+					<div class="portfolio card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper grid_box">
+							<div class="welcome-1">
+								<a href="{{ MEDIA_URL }}{{ event.image }}"  class="swipebox"  title="{{ event.title }}"> <img src="{{ MEDIA_URL }}{{ event.image }}" width="350" height="234" class="img-responsive" alt=""><span class="zoom-icon"></span> </a>
+							</div>
+						</div>
+		            </div>
+                    {% endfor %}
+					<div class="clearfix"></div>
+
+					<div class="clearfix"></div>
+    </div>
+	</div>
+	  <!-- Script for gallery Here -->
+				<script type="text/javascript" src="{% static 'news_base/js/jquery.min.js' %}"></script>
+					<script type="text/javascript">
+					$(function () {
+
+						var filterList = {
+
+							init: function () {
+
+								// MixItUp plugin
+								// http://mixitup.io
+								$('#portfoliolist').mixitup({
+									targetSelector: '.portfolio',
+									filterSelector: '.filter',
+									effects: ['fade'],
+									easing: 'snap',
+									// call the hover effect
+									onMixEnd: filterList.hoverEffect()
+								});
+
+							},
+
+							hoverEffect: function () {
+
+								// Simple parallax effect
+								$('#portfoliolist .portfolio').hover(
+									function () {
+										$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+										$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+									},
+									function () {
+										$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+										$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+									}
+								);
+
+							}
+
+						};
+
+						// Run the show!
+						filterList.init();
+
+
+					});
+					</script>
+<!-- portfolio-section  -->
+
+		</div>
+	</div>
+</div>
+<!-- about -->
+{% endblock %}

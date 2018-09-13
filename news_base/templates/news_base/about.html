@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}公司介绍{% endblock %}
+{% block content %}
+
+<div class="banner1">
+		<div class="container">
+	</div>
+	</div>
+<!-- header -->
+<!-- about -->
+	<div class="main">
+		<div class="container">
+			<div class="about">
+				<h4>关于我们</h4>
+			<div class="about-bottom">
+                {% for about in about_list %}
+				<div class="col-md-8 about-grid">
+					<h6><a>{{ about.title }}</a></h6>
+					<p>{{ about.text }}</p>
+				</div>
+				<div class="col-md-4">
+				<div class="view effect">
+					<img src="{{ MEDIA_URL }}{{ about.img }}" alt="image" class="img-responsive zoom-img">
+				</div>
+				</div>
+				<div class="clearfix"> </div>
+                    {% endfor %}
+                    </div>
+
+		</div>
+	</div>
+	</div>
+<!-- about -->
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}联系我们{% endblock %}
+
+{% block content %}
+    	<div class="banner1">
+		<div class="container">
+	</div>
+	</div>
+<!-- header -->
+
+<!-- contact -->
+<div class="contact-data">
+			<div class="container">
+		       <h2>取得联系</h2>
+		          <div class="contact-form">
+					     <form method="post" action="" class="left_form">
+					    {{ imformation_form }}
+                             {% csrf_token %}
+
+                             <span><input type="submit"  class="myButton"></span>
+					    </form>
+					    <div class="clear"></div>
+				  </div>
+				  <div class="content_bottom">
+				 	<div class="company_address">
+				     	<h2>位置</h2>
+						    	<p>深圳市龙岗区坂田街道,</p>
+						   		<p>月朗苑3栋2单元2B室,</p>
+						   		<p>中国·广东</p>
+				   		<p>电话:185 8399 9704</p>
+				 	 	<p>Email: <span><a href="mailto:517981402@qq.com">517981402(at)qq.com</a></span></p>
+
+				     </div>
+				       <div class="contact_info">
+    	 				<h2>我们在这里</h2>
+					    	  <div class="map">
+
+							   	    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#999;text-align:left;font-size:13px">地图</a></small>
+							  </div>
+      				     </div>
+				      <div class="clearfix"></div>
+	                </div>
+		 	  </div>
+			</div>
+  <!-- contact -->
+{% endblock %}

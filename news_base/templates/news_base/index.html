@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title%}首页{% endblock %}
+
+
+{% block content %}
+    <!--轮播图-->
+    <div class="banner">
+		<div class="container">
+		<div class="wmuSlider example1 section" id="section-1">
+			   <article style="position: absolute; width: 100%; opacity: 0;">
+			   	   	<div class="banner-info">
+						<h1>深圳尚辰商业保理有限公司 </h1>
+						<p>rjj</p>
+					</div>
+				</article>
+		  </div>
+		<!-- script -->
+          <script src="{% static 'news_base/js/jquery.wmuSlider.js' %}"></script>
+			<script>
+       			$('.example1').wmuSlider();
+   		    </script>
+			<!-- script -->
+	</div>
+	</div>
+<!-- header -->
+
+    <!-- curabitur -->
+	<div class="curabitur">
+		<div class="container">
+			<div class="col-md-4 curabitur-top">
+				<i class="hammer"></i>
+				<h4>Contrary to popular</h4>
+				<p>Pellentesque eu congue sapien. Donec hendrerit viverra finibus. Nulla eget sollicitudin leo. Morbi lacinia libero urna necrfaucibus nulla mollis et. </p>
+				<a href="#" class="btn  btn-1c btn1 btn-1d">More</a>
+			</div>
+			<div class="col-md-4 curabitur-top">
+				<i class="timer"></i>
+				<h4>Contrary to popular</h4>
+				<p>Pellentesque eu congue sapien. Donec hendrerit viverra finibus. Nulla eget sollicitudin leo. Morbi lacinia libero urna necrfaucibus nulla mollis et. </p>
+				<a href="#" class="btn  btn-1c btn1 btn-1d">More</a>
+			</div>
+			<div class="col-md-4 curabitur-top">
+				<i class="tent"></i>
+				<h4>Contrary to popular</h4>
+				<p>Pellentesque eu congue sapien. Donec hendrerit viverra finibus. Nulla eget sollicitudin leo. Morbi lacinia libero urna necrfaucibus nulla mollis et. </p>
+				<a href="#" class="btn  btn-1c btn1 btn-1d">More</a>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+<!-- curabitur -->
+
+<!-- welcome -->
+	<div class="welcome">
+		<div class="container">
+			<h2>欢迎合作</h2>
+
+            {% for cxd in  cooperation %}
+			<p>{{ cxd.text }}</p>
+            {% endfor %}
+
+
+		</div>
+	</div>
+<!-- welcome -->
+{% endblock %}
+
